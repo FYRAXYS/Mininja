@@ -1,6 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://3nt3p18whb17"]
+[gd_scene load_steps=6 format=3 uid="uid://3nt3p18whb17"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_gxnfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn2ik"]
+bg_color = Color(0.295035, 0.0370773, 0.0554581, 1)
+border_width_bottom = 10
+border_color = Color(0.52159, 0.0968998, 0.127098, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.777631, 0.177558, 0.215329, 1)
+shadow_size = 4
+shadow_offset = Vector2(4, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73rjy"]
+bg_color = Color(0.876546, 0.141549, 0.273103, 1)
+border_width_bottom = 10
+border_color = Color(0.295035, 0.0370773, 0.0554581, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.52159, 0.0968998, 0.127098, 1)
+shadow_size = 4
+shadow_offset = Vector2(4, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1npmx"]
+bg_color = Color(0.441433, 0.0755091, 0.101635, 1)
+border_width_bottom = 10
+border_color = Color(0.52159, 0.0968998, 0.127098, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.777631, 0.177558, 0.215329, 1)
+shadow_size = 4
+shadow_offset = Vector2(4, 5)
+
+[sub_resource type="Theme" id="Theme_ty6oi"]
+Button/styles/hover = SubResource("StyleBoxFlat_pn2ik")
+Button/styles/normal = SubResource("StyleBoxFlat_73rjy")
+Button/styles/pressed = SubResource("StyleBoxFlat_1npmx")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -37,6 +81,7 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ty6oi")
 theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
 text = "PLAY"
