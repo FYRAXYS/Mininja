@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0npuxax2x1oa"]
+
+[ext_resource type="Script" path="res://scripts/enemy_better_detection.gd" id="1_8j12l"]
+[ext_resource type="Texture2D" uid="uid://d1h4xr1xca548" path="res://images/character/enemies/enemy1/enemy_1_passive.png" id="1_75fkw"]
+[ext_resource type="Texture2D" uid="uid://c3b6mttp11a32" path="res://images/icons/light.png" id="2_uo6wp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xb675"]
+radius = 285.977
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtlp2"]
+
+[node name="EnemyBetterDetection" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_8j12l")
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+light_mask = 0
+z_index = 1
+scale = Vector2(0.0452863, 0.048047)
+texture = ExtResource("1_75fkw")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = -1
+scale = Vector2(0.49, 0.49)
+color = Color(0.956863, 0.768627, 0.294118, 0.47451)
+energy = 4.5
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("2_uo6wp")
+
+[node name="Area2D" type="Area2D" parent="PointLight2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/Area2D"]
+shape = SubResource("CircleShape2D_xb675")
+
+[node name="RayCast2D" type="RayCast2D" parent="PointLight2D/Area2D"]
+modulate = Color(1, 0.121569, 0.113725, 1)
+z_index = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qtlp2")
+
+[connection signal="body_entered" from="PointLight2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PointLight2D/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://c6gna7d8hcftq"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3ld7s"]
+[ext_resource type="Texture2D" uid="uid://b7efems5m8htb" path="res://images/character/player/idle/idle_0.png" id="2_n6u6t"]
+[ext_resource type="Texture2D" uid="uid://dug6h0p3rehs0" path="res://images/character/player/idle/idle_1.png" id="3_rnnrn"]
+[ext_resource type="Texture2D" uid="uid://cjmusb6mqmdnq" path="res://images/character/player/idle/idle_2.png" id="4_5361p"]
+[ext_resource type="Texture2D" uid="uid://bulwml15cqry5" path="res://images/character/player/idle/idle_3.png" id="5_nihak"]
+[ext_resource type="Texture2D" uid="uid://cx10s3jukfbfm" path="res://images/character/player/idle/idle_4.png" id="6_ciaog"]
+[ext_resource type="Texture2D" uid="uid://bm0fcgenhk1hr" path="res://images/character/player/idle/idle_5.png" id="7_ju34k"]
+[ext_resource type="Texture2D" uid="uid://g2qvmybadsk5" path="res://images/character/player/walk/walk_0.png" id="8_cnccs"]
+[ext_resource type="Texture2D" uid="uid://dwtwd6juifeg8" path="res://images/character/player/walk/walk_1.png" id="9_4kuns"]
+[ext_resource type="Texture2D" uid="uid://b3fjdkdyxor25" path="res://images/character/player/walk/walk_2.png" id="10_1ce10"]
+[ext_resource type="Texture2D" uid="uid://bnl476qxo0mit" path="res://images/character/player/walk/walk_3.png" id="11_o6585"]
+[ext_resource type="Texture2D" uid="uid://dvti6l56vm810" path="res://images/character/player/walk/walk_4.png" id="12_jolhs"]
+[ext_resource type="Texture2D" uid="uid://bhwhsdfkt3axc" path="res://images/character/player/walk/walk_5.png" id="13_jxgpq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlsof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n6u6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rnnrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5361p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nihak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ciaog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ju34k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cnccs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4kuns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1ce10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o6585")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jolhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jxgpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jolhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o6585")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1ce10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4kuns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cnccs")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q0fk2"]
+polygon = PackedVector2Array(0, -54.113, 35.5646, -44.2743, 45.7259, 78.7098, 25.4033, 73.7904, 20.3226, 59.0323, -30.4839, 59.0323, -35.5646, 73.7904, -55.8872, 78.7098, -45.7259, -44.2743)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hacn0"]
+radius = 11.0
+height = 28.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 2
+script = ExtResource("1_3ld7s")
+
+[node name="PlayerSkin" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.052, 0.052)
+sprite_frames = SubResource("SpriteFrames_vlsof")
+animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSkin"]
+scale = Vector2(0.99359, 0.99359)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerSkin"]
+scale = Vector2(3.7851, 3.9092)
+occluder = SubResource("OccluderPolygon2D_q0fk2")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_hacn0")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.15
+
+[connection signal="just_moved" from="." to="." method="_on_just_moved"]
+[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsri03bsy1tfp"]
+
+[ext_resource type="Script" path="res://scripts/menu_options.gd" id="1_d01hw"]
+[ext_resource type="Texture2D" uid="uid://we7i8iub7c0p" path="res://images/character/player/character_passive.png" id="2_clbvu"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d01hw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 1176.0
+offset_bottom = 664.0
+color = Color(0.788235, 0.105882, 0.223529, 0.713726)
+
+[node name="Levels" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -17.0
+offset_top = -12.0
+offset_right = 1176.0
+offset_bottom = 666.0
+
+[node name="lvl1" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 396.0
+offset_right = 241.0
+offset_bottom = 484.0
+text = "level 1"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl1"]
+position = Vector2(48, 40)
+
+[node name="lvl2" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 140.0
+offset_right = 433.0
+offset_bottom = 228.0
+text = "level 2"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl2"]
+position = Vector2(48, 40)
+
+[node name="lvl3" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 332.0
+offset_right = 865.0
+offset_bottom = 412.0
+text = "level 3
+"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl3"]
+position = Vector2(40, 40)
+
+[node name="PlayerSelection" type="Sprite2D" parent="."]
+position = Vector2(179, 424)
+scale = Vector2(0.133333, 0.133333)
+texture = ExtResource("2_clbvu")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.5
+offset_top = -85.0
+offset_right = 124.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.682353, 0.568627, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "PLAY"
+
+[connection signal="mouse_entered" from="Levels/lvl1" to="." method="_on_lvl_1_mouse_entered"]
+[connection signal="mouse_entered" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_entered"]
+[connection signal="mouse_exited" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_exited"]
+[connection signal="mouse_entered" from="Levels/lvl3" to="." method="_on_lvl_3_mouse_entered"]
+[connection signal="mouse_exited" from="Levels/lvl3" to="." method="_on_lvl_3_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
