@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var tile_map = $"../Tiles/TileMap"
 @onready var sprite_2d = $PlayerSkin
 var is_moving: bool = false
-var walk_animation: bool = true
 signal just_moved
 
 
@@ -24,25 +23,24 @@ func _process(delta: float) -> void:
 	if is_moving :
 		return 
 		
-	if Input.is_action_just_pressed("move_up") :
+	if Input.is_action_pressed("move_up") :
 		move(Vector2.UP)
-	elif Input.is_action_just_pressed("move_down") :
+	elif Input.is_action_pressed("move_down") :
 		move(Vector2.DOWN)
-	elif Input.is_action_just_pressed("move_left") :
+	elif Input.is_action_pressed("move_left") :
 		move(Vector2.LEFT)
 		$PlayerSkin.flip_h = true
-	elif Input.is_action_just_pressed("move_right") :
+	elif Input.is_action_pressed("move_right") :
 		move(Vector2.RIGHT)
 		$PlayerSkin.flip_h = false
 		
 	elif Input.is_action_just_pressed("Pass"):
 		just_moved.emit()
 
-	
 
 	if !is_moving :
 		$PlayerSkin.animation = "idle"
-	elif is_moving && walk_animation :
+	elif is_moving :
 		$PlayerSkin.animation = "walk"
 	$PlayerSkin.play()
 
@@ -67,8 +65,3 @@ func move(direction: Vector2):
 		global_position = tile_map.map_to_local(target_tile)
 		sprite_2d.global_position = tile_map.map_to_local(current_tile)
 		
-
-func _on_movement_timer_timeout() -> void:
-	# Si le timer est écoulé
-	walk_animation = false
-	##print("fin timer")
