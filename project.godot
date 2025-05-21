@@ -23,11 +23,6 @@ boot_splash/minimum_display_time=715
 
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
-[display]
-
-window/size/mode=2
-window/stretch/scale=2.0
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
