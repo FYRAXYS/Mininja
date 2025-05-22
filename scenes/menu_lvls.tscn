@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsri03bsy1tfp"]
 
-[ext_resource type="Script" path="res://scripts/menu_options.gd" id="1_d01hw"]
+[ext_resource type="Script" uid="uid://bv3famuxmrh7f" path="res://scripts/menu_options.gd" id="1_d01hw"]
 [ext_resource type="Texture2D" uid="uid://we7i8iub7c0p" path="res://images/character/player/character_passive.png" id="2_clbvu"]
 
 [node name="Menu" type="Control"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1h4xr1xca548" path="res://images/character/enemies/enemy1/enemy_1_passive.png" id="1_ei0aw"]
 [ext_resource type="Texture2D" uid="uid://c3b6mttp11a32" path="res://images/icons/light.png" id="2_kg6mh"]
-[ext_resource type="Script" path="res://scripts/player_detection.gd" id="3_exaoq"]
+[ext_resource type="Script" uid="uid://1tx0ctvbwi3g" path="res://scripts/player_detection.gd" id="3_exaoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ure8a"]
 size = Vector2(30, 28)

@@ -12,16 +12,20 @@ config_version=5
 
 config/name="Mininja"
 run/main_scene="res://scenes/menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.225542, 0.0891925, 0.128808, 1)
-boot_splash/image="res://images/icons/icon.png"
 boot_splash/fullsize=false
+boot_splash/image="res://images/icons/icon.png"
 config/icon="res://images/icons/icon.png"
 boot_splash/minimum_display_time=715
 
 [autoload]
 
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
