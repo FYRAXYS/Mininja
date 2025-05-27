@@ -20,7 +20,7 @@ func _on_button_button_pressed() -> void:
 
 func _on_door_body_entered(body: Node2D) -> void:
 	print(door.is_monitoring())
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/lvl_4.tscn")
 
 func _process(delta: float) -> void:
 	save(level_path)

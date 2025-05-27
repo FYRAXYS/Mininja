@@ -42,7 +42,9 @@ func _process(delta: float) -> void:
 		$PlayerSkin.animation = "idle"
 	elif is_moving :
 		$PlayerSkin.animation = "walk"
+		
 	$PlayerSkin.play()
+	await $PlayerSkin.animation_finished
 
 func move(direction: Vector2):
 	# Get current tile Vector2i
