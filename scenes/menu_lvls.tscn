@@ -82,6 +82,18 @@ theme_override_colors/font_color = Color(0.682353, 0.568627, 0, 1)
 theme_override_font_sizes/font_size = 56
 text = "PLAY"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 300.0
+offset_right = 674.0
+offset_bottom = 427.0
+text = "Don't select others levels than
+the number one (it's the only
+one working with the new
+movement mechanic, the others
+are gonna crash if you move)"
+
 [connection signal="mouse_entered" from="Levels/lvl1" to="." method="_on_lvl_1_mouse_entered"]
 [connection signal="mouse_entered" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_entered"]
 [connection signal="mouse_exited" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_exited"]

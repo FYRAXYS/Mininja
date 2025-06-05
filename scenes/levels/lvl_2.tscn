@@ -350,13 +350,4 @@ script = ExtResource("7_bgcsg")
 [node name="EnemyProto" parent="Paths/Path2D9/PathFollow2D" instance=ExtResource("6_ch3ew")]
 rotation = -0.00311525
 
-[connection signal="just_moved" from="Player" to="Paths/Path2D/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D2/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D3/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D4/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D5/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D6/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D7/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D8/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D9/PathFollow2D" method="_on_player_just_moved"]
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]

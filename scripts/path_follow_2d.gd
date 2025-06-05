@@ -1,13 +1,24 @@
 extends PathFollow2D
 
-var speed = 0.1
-var can_move: bool = false
-
+@onready var timer = %EnemyTimer
 
 func _process(delta: float) -> void:
-	if (can_move) :
-		progress += 32
-		can_move = false
+	
+	if Input.is_action_pressed("move_down") :
+		timer.start()
+	elif Input.is_action_pressed("move_up") :
+		timer.start()
+	elif Input.is_action_pressed("move_left") :
+		timer.start()
+	elif Input.is_action_pressed("move_right") :
+		timer.start()
+	
+	if Input.is_action_just_pressed("Pass") :
+		timer.start()
 
-func _on_player_just_moved() -> void:
-	can_move = true
+
+func _on_enemy_timer_timeout() -> void:
+	# avancée de base : 32
+	for i in range(8) :
+		await get_tree().create_timer(0.01).timeout
+		progress += 4

@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var tile_map = $"../Tiles/TileMap"
 @onready var sprite_2d = $PlayerSkin
+@onready var timer = %PlayerTimer
 var is_moving: bool = false
-signal just_moved
-
+var can_move: bool = true
 
 func _physics_process(delta: float) -> void:
 	if !is_moving :
@@ -12,8 +12,7 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position == sprite_2d.global_position :
 		is_moving = false
-		just_moved.emit()
-		$MovementTimer.start()
+		
 		return 
 	else :
 		sprite_2d.global_position = sprite_2d.global_position.move_toward(global_position, 4)
@@ -22,20 +21,26 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if is_moving :
 		return 
-		
-	if Input.is_action_pressed("move_up") :
-		move(Vector2.UP)
-	elif Input.is_action_pressed("move_down") :
-		move(Vector2.DOWN)
-	elif Input.is_action_pressed("move_left") :
-		move(Vector2.LEFT)
-		$PlayerSkin.flip_h = true
-	elif Input.is_action_pressed("move_right") :
-		move(Vector2.RIGHT)
-		$PlayerSkin.flip_h = false
-		
-	elif Input.is_action_just_pressed("Pass"):
-		just_moved.emit()
+	
+	if can_move :	
+		if Input.is_action_pressed("move_up") :
+			move(Vector2.UP)
+			timer.start()
+			can_move = false
+		elif Input.is_action_pressed("move_down") :
+			move(Vector2.DOWN)
+			timer.start()
+			can_move = false
+		elif Input.is_action_pressed("move_left") :
+			move(Vector2.LEFT)
+			$PlayerSkin.flip_h = true
+			timer.start()
+			can_move = false
+		elif Input.is_action_pressed("move_right") :
+			move(Vector2.RIGHT)
+			$PlayerSkin.flip_h = false
+			timer.start()
+			can_move = false
 
 
 	if !is_moving :
@@ -67,3 +72,7 @@ func move(direction: Vector2):
 		global_position = tile_map.map_to_local(target_tile)
 		sprite_2d.global_position = tile_map.map_to_local(current_tile)
 		
+
+
+func _on_player_timer_timeout() -> void:
+	can_move = true

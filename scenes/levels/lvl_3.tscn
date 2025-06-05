@@ -230,7 +230,5 @@ rotation = -0.00311525
 z_index = 1
 position = Vector2(-528, 656)
 
-[connection signal="just_moved" from="Player" to="Paths/Path2D/PathFollow2D" method="_on_player_just_moved"]
-[connection signal="just_moved" from="Player" to="Paths/Path2D2/PathFollow2D" method="_on_player_just_moved"]
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="button_pressed" from="Button" to="." method="_on_button_button_pressed"]

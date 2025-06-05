@@ -104,9 +104,3 @@ occluder = SubResource("OccluderPolygon2D_q0fk2")
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_hacn0")
-
-[node name="MovementTimer" type="Timer" parent="."]
-wait_time = 0.15
-
-[connection signal="just_moved" from="." to="." method="_on_just_moved"]
-[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
