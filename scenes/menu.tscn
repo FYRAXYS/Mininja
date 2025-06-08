@@ -88,18 +88,19 @@ theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
 text = "PLAY"
 
-[node name="LevelSelection" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="LevelSelection2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ty6oi")
 theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
 text = "LEVEL SELECTION"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ty6oi")
 theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
-text = "EXIT
-"
+text = "EXIT"
 
 [node name="Title" type="Label" parent="."]
 z_index = 3
@@ -150,6 +151,6 @@ flat = true
 autowrap_mode = 3
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/LevelSelection" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LevelSelection2" to="." method="_on_level_selection_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="DiscordButton" to="." method="_on_discord_button_pressed"]
