@@ -1,9 +1,9 @@
 # 🔴 | MININJA
 
 **An original mix between :** 
-- ♟️ *Tabletop*
-- 🥷 *Stealth*
-- 🔄 *Turn based mechanics*
+- ♟️ * | Tabletop*
+- 🥷 * | Stealth*
+- 🔄 * | Turn based mechanics*
 
 
 # 📖 | Concept
