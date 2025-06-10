@@ -1,5 +1,8 @@
 extends Control
 
+var popup:bool = true
+@onready var text = $"./BeginText"
+
 
 
 func _on_play_pressed() -> void:
