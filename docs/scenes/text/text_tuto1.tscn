@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://ob0fobk7xim4"]
+
+[ext_resource type="Script" uid="uid://c6v1g4no4qjhm" path="res://scripts/text_tuto_1.gd" id="1_7w2s8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhr3s"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w2s8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[node name="text_tuto1" type="Control"]
+custom_minimum_size = Vector2(370, 255)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 767.0
+offset_top = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7w2s8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(370, 255)
+layout_mode = 1
+offset_right = 370.0
+offset_bottom = 255.0
+color = Color(0, 0, 0, 0.898039)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(370, 255)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(370, 255)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(355, 221)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "
+Use [Z|Q|S|D] or [W|S|A|D] to move.
+
+If you don't want or don't need to move, use the right mouse button [RMB] to pass your turn."
+autowrap_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_lhr3s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7w2s8")
+show_percentage = false

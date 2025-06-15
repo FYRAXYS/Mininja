@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c4koilfyjtx1v"]
+[gd_scene load_steps=17 format=4 uid="uid://c4koilfyjtx1v"]
 
 [ext_resource type="Texture2D" uid="uid://cxlb5lmq3si1w" path="res://images/tiles/tiles.png" id="1_06phr"]
 [ext_resource type="Script" uid="uid://dwl2a5b4gqusu" path="res://scripts/lvl_1.gd" id="1_chmkb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bsmd8yntvy3kx" path="res://scripts/discord_manager.gd" id="4_c4fgj"]
 [ext_resource type="PackedScene" uid="uid://c3kd302prb1iw" path="res://scenes/door.tscn" id="4_skpp8"]
 [ext_resource type="PackedScene" uid="uid://rbp7e5pfbiip" path="res://scenes/enemy_proto.tscn" id="6_6sw64"]
+[ext_resource type="PackedScene" uid="uid://ob0fobk7xim4" path="res://scenes/text/text_tuto1.tscn" id="7_vpggf"]
 [ext_resource type="Script" uid="uid://d161kd625vt6c" path="res://scripts/path_follow_2d.gd" id="7_ytvm3"]
 [ext_resource type="PackedScene" uid="uid://dl07hawigldrt" path="res://scenes/menu_pause.tscn" id="8_7hftm"]
 
@@ -183,13 +184,19 @@ position = Vector2(-48, 48)
 visible = false
 z_index = 3
 
+[node name="text_tuto1" parent="Player" instance=ExtResource("7_vpggf")]
+z_index = 2
+offset_left = 206.0
+offset_top = 69.0
+offset_right = 576.0
+offset_bottom = 324.0
+
 [node name="Door" parent="." instance=ExtResource("4_skpp8")]
 position = Vector2(48, -240)
 
 [node name="Paths" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="Paths"]
-z_index = 4
 curve = SubResource("Curve2D_2lf8p")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
@@ -203,7 +210,6 @@ script = ExtResource("7_ytvm3")
 rotation = 0.00763344
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
-z_index = 4
 position = Vector2(231, -274)
 curve = SubResource("Curve2D_vpggf")
 
