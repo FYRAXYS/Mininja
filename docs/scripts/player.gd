@@ -23,20 +23,20 @@ func _process(delta: float) -> void:
 		return 
 	
 	if can_move :	
-		if Input.is_action_pressed("move_up") :
+		if Input.is_action_just_pressed("move_up") :
 			move(Vector2.UP)
 			timer.start()
 			can_move = false
-		elif Input.is_action_pressed("move_down") :
+		elif Input.is_action_just_pressed("move_down") :
 			move(Vector2.DOWN)
 			timer.start()
 			can_move = false
-		elif Input.is_action_pressed("move_left") :
+		elif Input.is_action_just_pressed("move_left") :
 			move(Vector2.LEFT)
 			$PlayerSkin.flip_h = true
 			timer.start()
 			can_move = false
-		elif Input.is_action_pressed("move_right") :
+		elif Input.is_action_just_pressed("move_right") :
 			move(Vector2.RIGHT)
 			$PlayerSkin.flip_h = false
 			timer.start()

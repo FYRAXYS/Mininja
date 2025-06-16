@@ -4,13 +4,13 @@ extends PathFollow2D
 
 func _process(delta: float) -> void:
 	
-	if Input.is_action_pressed("move_down") :
+	if Input.is_action_just_pressed("move_down") :
 		timer.start()
-	elif Input.is_action_pressed("move_up") :
+	elif Input.is_action_just_pressed("move_up") :
 		timer.start()
-	elif Input.is_action_pressed("move_left") :
+	elif Input.is_action_just_pressed("move_left") :
 		timer.start()
-	elif Input.is_action_pressed("move_right") :
+	elif Input.is_action_just_pressed("move_right") :
 		timer.start()
 	
 	if Input.is_action_just_pressed("Pass") :
