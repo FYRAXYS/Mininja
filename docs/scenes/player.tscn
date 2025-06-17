@@ -92,7 +92,7 @@ script = ExtResource("1_3ld7s")
 [node name="PlayerSkin" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.052, 0.052)
 sprite_frames = SubResource("SpriteFrames_vlsof")
-animation = &"walk"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSkin"]
 scale = Vector2(0.99359, 0.99359)
