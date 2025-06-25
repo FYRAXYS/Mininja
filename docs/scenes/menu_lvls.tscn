@@ -65,7 +65,6 @@ scale = Vector2(0.133333, 0.133333)
 texture = ExtResource("2_clbvu")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSelection"]
-scale = Vector2(1, 1)
 
 [node name="Play" type="Button" parent="PlayerSelection"]
 visible = false

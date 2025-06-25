@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c4koilfyjtx1v"]
+[gd_scene load_steps=18 format=4 uid="uid://c4koilfyjtx1v"]
 
 [ext_resource type="Texture2D" uid="uid://cxlb5lmq3si1w" path="res://images/tiles/tiles.png" id="1_06phr"]
 [ext_resource type="Script" uid="uid://dwl2a5b4gqusu" path="res://scripts/lvl_1.gd" id="1_chmkb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ob0fobk7xim4" path="res://scenes/text/text_tuto1.tscn" id="7_vpggf"]
 [ext_resource type="Script" uid="uid://d161kd625vt6c" path="res://scripts/path_follow_2d.gd" id="7_ytvm3"]
 [ext_resource type="PackedScene" uid="uid://dl07hawigldrt" path="res://scenes/menu_pause.tscn" id="8_7hftm"]
+[ext_resource type="Texture2D" uid="uid://bkj128braddpt" path="res://images/character/player/arrow.png" id="8_14tjw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g783o"]
 texture = ExtResource("3_0h4hi")
@@ -180,6 +181,17 @@ tile_set = SubResource("TileSet_qxr64")
 [node name="Player" parent="." instance=ExtResource("2_0y43r")]
 position = Vector2(-48, 48)
 
+[node name="Arrow" type="Marker2D" parent="Player/PlayerSkin" index="2"]
+unique_name_in_owner = true
+scale = Vector2(19.2308, 19.2308)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/PlayerSkin/Arrow"]
+unique_name_in_owner = true
+position = Vector2(48, 3.8147e-06)
+rotation = 1.57079
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("8_14tjw")
+
 [node name="menu_pause" parent="Player" instance=ExtResource("8_7hftm")]
 visible = false
 z_index = 3
@@ -236,3 +248,5 @@ autostart = true
 [connection signal="timeout" from="EnemyTimer" to="Paths/Path2D/PathFollow2D" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="Paths/Path2D2/PathFollow2D2" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="PlayerTimer" to="Player" method="_on_player_timer_timeout"]
+
+[editable path="Player"]

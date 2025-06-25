@@ -4,7 +4,7 @@ extends Control
 @onready var popup = $"."
 var time_left = 100
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	progress_bar.value = time_left
 	time_left -= 0.3
 	

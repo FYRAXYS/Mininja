@@ -2,7 +2,7 @@ extends PathFollow2D
 
 @onready var timer = %EnemyTimer
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("move_down") :
 		timer.start()

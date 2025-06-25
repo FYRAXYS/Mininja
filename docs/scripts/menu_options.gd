@@ -12,7 +12,7 @@ var max_zoom = Vector2(2,2)
 var min_zoom = Vector2(-2,-2)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_up") && camera.get_zoom() <= max_zoom :
 		camera.set_zoom(camera.get_zoom()+Vector2(0.5,0.5))
 	elif Input.is_action_just_pressed("scroll_down") && camera.get_zoom() >= min_zoom:

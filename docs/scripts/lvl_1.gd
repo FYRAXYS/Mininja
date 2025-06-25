@@ -1,7 +1,9 @@
 extends Node2D
 
-var save_path = "res://saves/currrent_level.save"
+
 var level_path = "res://scenes/levels/lvl_1.tscn"
+
+@onready var arrow = %Arrow
 
 func save(level_path):
 	var file = FileAccess.open("res://saves/currrent_level.save", FileAccess.WRITE)
@@ -11,14 +13,16 @@ func save(level_path):
 var paused = false
 @onready var menu_pause = $Player/menu_pause
 
-func _on_door_body_entered(body: Node2D) -> void:
+func _on_door_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/lvl_2.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	save(level_path)
 	
 	if Input.is_action_just_pressed("pause_menu"):
 		pauseMenu()
+	
+	arrow.look_at($Door.global_position)
 
 func pauseMenu():
 	if paused :

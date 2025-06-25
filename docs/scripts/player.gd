@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 @onready var tile_map = $"../Tiles/TileMap"
 @onready var sprite_2d = $PlayerSkin
-@onready var timer = %PlayerTimer
+@onready var timer = $"../%PlayerTimer"
 var is_moving: bool = false
 var can_move: bool = true
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	if !is_moving :
 		return
 	
@@ -18,7 +19,8 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.global_position = sprite_2d.global_position.move_toward(global_position, 4)
 
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	if is_moving :
 		return 
 	
