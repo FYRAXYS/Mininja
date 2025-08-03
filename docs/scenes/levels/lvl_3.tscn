@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cxlb5lmq3si1w" path="res://images/tiles/tiles.png" id="2_8owgv"]
 [ext_resource type="Texture2D" uid="uid://bk1l1areufyuo" path="res://images/tiles/accessories1.png" id="3_ubymr"]
 [ext_resource type="PackedScene" uid="uid://c6gna7d8hcftq" path="res://scenes/player.tscn" id="3_y2fvj"]
-[ext_resource type="PackedScene" uid="uid://dl07hawigldrt" path="res://scenes/menu_pause.tscn" id="4_y0y5t"]
-[ext_resource type="PackedScene" uid="uid://c3kd302prb1iw" path="res://scenes/door.tscn" id="5_tvea7"]
+[ext_resource type="PackedScene" uid="uid://dl07hawigldrt" path="res://scenes/menus/menu_pause.tscn" id="4_y0y5t"]
+[ext_resource type="PackedScene" uid="uid://c3kd302prb1iw" path="res://scenes/props/door.tscn" id="5_tvea7"]
 [ext_resource type="Script" uid="uid://d161kd625vt6c" path="res://scripts/path_follow_2d.gd" id="7_552vi"]
 [ext_resource type="PackedScene" uid="uid://rbp7e5pfbiip" path="res://scenes/enemy_proto.tscn" id="8_mck7a"]
-[ext_resource type="PackedScene" uid="uid://dd71hp5atakkw" path="res://scenes/button.tscn" id="9_b6dnu"]
+[ext_resource type="PackedScene" uid="uid://dd71hp5atakkw" path="res://scenes/props/button.tscn" id="9_b6dnu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_im0wq"]
 texture = ExtResource("3_ubymr")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mininja"
-run/main_scene="res://scenes/menu.tscn"
+run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.225542, 0.0891925, 0.128808, 1)
 boot_splash/fullsize=false

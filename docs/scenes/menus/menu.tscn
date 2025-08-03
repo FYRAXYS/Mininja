@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://3nt3p18whb17"]
+
+[ext_resource type="Script" uid="uid://clldd0uulqa7y" path="res://scripts/menu.gd" id="1_gxnfq"]
+[ext_resource type="Texture2D" uid="uid://c6mepinjkf1fm" path="res://images/icons/background.png" id="2_con2f"]
+[ext_resource type="PackedScene" uid="uid://pd36is8xkm4g" path="res://scenes/text/text_intro.tscn" id="2_vjb58"]
+[ext_resource type="Theme" uid="uid://cw3tob8bmmn77" path="res://ressources/buttons/button_theme.tres" id="3_cfcag"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gxnfq")
+
+[node name="Colors" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Colors"]
+z_index = 1
+layout_mode = 0
+offset_left = -496.0
+offset_top = 342.0
+offset_right = 1544.0
+offset_bottom = 524.0
+rotation = 0.288911
+color = Color(0.788235, 0.105882, 0.223529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Colors"]
+z_index = 1
+layout_mode = 0
+offset_left = -721.0
+offset_top = 313.0
+offset_right = 1280.0
+offset_bottom = 495.0
+rotation = -0.371281
+color = Color(0.788235, 0.105882, 0.223529, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Colors"]
+layout_mode = 0
+offset_left = -243.0
+offset_top = -462.0
+offset_right = 463.0
+offset_bottom = 1142.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="Colors"]
+position = Vector2(762, 326)
+scale = Vector2(0.2205, 0.2205)
+texture = ExtResource("2_con2f")
+
+[node name="Title" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -808.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "MININJA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+offset_left = 24.0
+offset_top = 119.0
+offset_right = 309.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "A flash game by FYRAXYS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.0
+offset_top = -82.0
+offset_right = -294.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 1
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cfcag")
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
+theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+text = "PLAY"
+
+[node name="LevelSelection2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cfcag")
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
+theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+text = "LEVEL SELECTION"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cfcag")
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cfcag")
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
+theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+text = "EXIT"
+
+[node name="DiscordButton" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -54.0
+offset_right = 189.0
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0.646868, 0.647635, 1)
+theme_override_colors/font_hover_color = Color(0.25098, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Join the discord server !!!"
+flat = true
+autowrap_mode = 3
+
+[node name="BeginText" parent="." instance=ExtResource("2_vjb58")]
+visible = false
+z_index = 3
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LevelSelection2" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="DiscordButton" to="." method="_on_discord_button_pressed"]

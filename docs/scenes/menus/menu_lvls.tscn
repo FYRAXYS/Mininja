@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsri03bsy1tfp"]
+
+[ext_resource type="Script" uid="uid://bv3famuxmrh7f" path="res://scripts/world_map.gd" id="1_d01hw"]
+[ext_resource type="Texture2D" uid="uid://by3uyi48bfx2m" path="res://images/icons/map.png" id="2_4odyr"]
+[ext_resource type="Texture2D" uid="uid://we7i8iub7c0p" path="res://images/character/player/character_passive.png" id="2_clbvu"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d01hw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.643333, 0.643333)
+texture = ExtResource("2_4odyr")
+
+[node name="Levels" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -17.0
+offset_top = -12.0
+offset_right = 1176.0
+offset_bottom = 666.0
+
+[node name="lvl1" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = -741.0
+offset_top = 630.0
+offset_right = -553.0
+offset_bottom = 831.0
+text = "level 1"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl1"]
+position = Vector2(95, 104)
+
+[node name="lvl2" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 848.0
+offset_right = 114.0
+offset_bottom = 1033.0
+text = "level 2"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl2"]
+position = Vector2(93, 94)
+
+[node name="lvl3" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 567.0
+offset_right = 377.0
+offset_bottom = 789.0
+text = "level 3
+"
+
+[node name="Marker2D" type="Marker2D" parent="Levels/lvl3"]
+position = Vector2(102, 111)
+
+[node name="PlayerSelection" type="Sprite2D" parent="."]
+position = Vector2(-665, 943)
+scale = Vector2(0.133333, 0.133333)
+texture = ExtResource("2_clbvu")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSelection"]
+
+[node name="Play" type="Button" parent="PlayerSelection"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -570.001
+offset_top = -157.499
+offset_right = 14.9993
+offset_bottom = 47.5012
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.682353, 0.568627, 0, 1)
+theme_override_font_sizes/font_size = 171
+text = "PLAY"
+
+[connection signal="mouse_entered" from="Levels/lvl1" to="." method="_on_lvl_1_mouse_entered"]
+[connection signal="mouse_entered" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_entered"]
+[connection signal="mouse_exited" from="Levels/lvl2" to="." method="_on_lvl_2_mouse_exited"]
+[connection signal="mouse_entered" from="Levels/lvl3" to="." method="_on_lvl_3_mouse_entered"]
+[connection signal="mouse_exited" from="Levels/lvl3" to="." method="_on_lvl_3_mouse_exited"]
+[connection signal="pressed" from="PlayerSelection/Play" to="." method="_on_play_pressed"]

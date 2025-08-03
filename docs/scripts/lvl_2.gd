@@ -21,6 +21,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
 		pauseMenu()
 	
+	#arrow.look_at($Door.global_position)
+
 func pauseMenu():
 	if paused :
 		menu_pause.hide()

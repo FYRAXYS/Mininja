@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo54jglodl60h"]
+
+[ext_resource type="Script" uid="uid://2n1c7kw6eks" path="res://scripts/menu_options.gd" id="1_kic5f"]
+[ext_resource type="Theme" uid="uid://cw3tob8bmmn77" path="res://ressources/buttons/button_theme.tres" id="1_m5vgu"]
+
+[node name="menu_options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kic5f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -243.0
+offset_top = -462.0
+offset_right = 1521.0
+offset_bottom = 1142.0
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -53.5
+offset_right = 225.0
+offset_bottom = 53.5
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="HBoxReset" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxReset"]
+layout_mode = 2
+text = "Level Progression : "
+
+[node name="Reset" type="Button" parent="MarginContainer/VBoxContainer/HBoxReset"]
+layout_mode = 2
+theme = ExtResource("1_m5vgu")
+text = "Reset Progression"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxReset/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
