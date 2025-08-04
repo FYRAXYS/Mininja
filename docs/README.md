@@ -1,3 +1,4 @@
+## 🗺️ | Languages[^1] :
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/FYRAXYS/Mininja/blob/e664cf213c15f1cf96640743ee53714b9fcddd67/docs/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/FYRAXYS/Mininja/blob/e664cf213c15f1cf96640743ee53714b9fcddd67/docs/README.fr.md)
 
@@ -36,3 +37,6 @@ If you wish to report a bug (I know there are many of them but maybe i missed a 
 <br/>
 <br/>
 Thank you for playing the game ! <3
+
+
+[^1]: Inspired by [jonatasemidio's work](https://github.com/jonatasemidio/multilanguage-readme-pattern/tree/master)
