@@ -1,3 +1,7 @@
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/FYRAXYS/Mininja/blob/e664cf213c15f1cf96640743ee53714b9fcddd67/docs/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/FYRAXYS/Mininja/blob/e664cf213c15f1cf96640743ee53714b9fcddd67/docs/README.fr.md)
+
+
 # 🔴 | MININJA
 
 **An original mix between :** 
