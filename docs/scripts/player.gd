@@ -46,9 +46,10 @@ func _process(_delta: float) -> void:
 
 
 	if !is_moving :
-		$PlayerSkin.animation = "idle"
+		$PlayerSkin.animation = "idle_refreshed"
 	elif is_moving :
-		$PlayerSkin.animation = "walk"
+		#$PlayerSkin.animation = "walk"
+		pass
 		
 	$PlayerSkin.play()
 	await $PlayerSkin.animation_finished
