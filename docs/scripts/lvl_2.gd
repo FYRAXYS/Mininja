@@ -13,7 +13,7 @@ var paused = false
 @onready var menu_pause = $Player/menu_pause
 
 func _on_door_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/lvl_3.tscn")
+	SceneManager.change_scene("res://scenes/levels/lvl_3.tscn")
 
 func _process(_delta: float) -> void:
 	save(level_path)

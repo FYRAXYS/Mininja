@@ -5,7 +5,7 @@ var level_path = "res://scenes/levels/lvl_1.tscn"
 
 @onready var arrow = %Arrow
 
-func save(level_path):
+func save(path: String):
 	var file = FileAccess.open("res://saves/currrent_level.save", FileAccess.WRITE)
 	file.store_var(level_path) 
 	file.close()
@@ -14,7 +14,7 @@ var paused = false
 @onready var menu_pause = $Player/menu_pause
 
 func _on_door_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/lvl_2.tscn")
+	SceneManager.change_scene("res://scenes/levels/lvl_2.tscn")
 
 func _process(_delta: float) -> void:
 	save(level_path)

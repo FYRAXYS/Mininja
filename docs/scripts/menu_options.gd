@@ -9,4 +9,4 @@ func _on_reset_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")
+	SceneManager.change_scene("res://scenes/menus/menu.tscn")

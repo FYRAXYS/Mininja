@@ -1,10 +1,10 @@
 extends Control
 
-var popup:bool = true
 var level_path
-@onready var text = $"./BeginText"
 
 func _ready() -> void:
+	get_tree().paused = false
+	
 	if(FileAccess.file_exists("res://saves/currrent_level.save")) :
 		load_data()
 	else :
@@ -16,16 +16,16 @@ func load_data() :
 	file.close()
 
 
-func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file(level_path)
+func _on_play_pressed():
+	SceneManager.change_scene(level_path)
 
 
 func _on_level_selection_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/menu_lvls.tscn")
+	SceneManager.change_scene("res://scenes/menus/menu_lvls.tscn")
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/menu_options.tscn")
+	SceneManager.change_scene("res://scenes/menus/menu_options.tscn")
 
 
 func _on_exit_pressed() -> void:

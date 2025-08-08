@@ -41,4 +41,4 @@ func _on_lvl_3_mouse_entered() -> void:
 
 func _on_play_pressed() -> void:
 	if selected_level != "" :
-		get_tree().change_scene_to_file(selected_level)
+		SceneManager.change_scene(selected_level)

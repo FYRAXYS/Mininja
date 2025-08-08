@@ -22,6 +22,7 @@ boot_splash/minimum_display_time=715
 [autoload]
 
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+SceneManager="*res://scripts/SceneManager.gd"
 
 [display]
 
