@@ -29,7 +29,10 @@ func _on_options_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	if OS.get_name() == "Web":
+		JavaScriptBridge.eval("window.location.href='https://github.com/FYRAXYS/Mininja'")
+	else:
+		get_tree().quit()
 
 
 func _on_discord_button_pressed() -> void:
