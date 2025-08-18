@@ -5,16 +5,15 @@ extends CharacterBody2D
 @onready var timer = $"../%PlayerTimer"
 var is_moving: bool = false
 var can_move: bool = true
+#var pressed_direction_key: bool = false
 
 
 func _physics_process(_delta: float) -> void:
-	if !is_moving :
-		return
 	
 	if global_position == sprite_2d.global_position :
 		is_moving = false
-		
 		return 
+		
 	else :
 		sprite_2d.global_position = sprite_2d.global_position.move_toward(global_position, 4)
 
@@ -24,27 +23,38 @@ func _process(_delta: float) -> void:
 	if is_moving :
 		return 
 	
-	if can_move :	
+	# MOUVEMENT
+	if can_move :
 		if Input.is_action_just_pressed("move_up") :
 			move(Vector2.UP)
-			timer.start()
 			can_move = false
+			timer.start()
+
 		elif Input.is_action_just_pressed("move_down") :
 			move(Vector2.DOWN)
-			timer.start()
 			can_move = false
+			timer.start()
+
+			
 		elif Input.is_action_just_pressed("move_left") :
 			move(Vector2.LEFT)
 			$PlayerSkin.flip_h = true
-			timer.start()
 			can_move = false
+			timer.start()
+
+			
 		elif Input.is_action_just_pressed("move_right") :
 			move(Vector2.RIGHT)
 			$PlayerSkin.flip_h = false
-			timer.start()
 			can_move = false
+			timer.start()
 
+	
+	#if pressed_direction_key and is_moving :
+		#timer.start()
+		#pressed_direction_key = false
 
+	# SPRITE
 	if !is_moving :
 		$PlayerSkin.animation = "idle_refreshed"
 	elif is_moving :
@@ -53,6 +63,8 @@ func _process(_delta: float) -> void:
 		
 	$PlayerSkin.play()
 	await $PlayerSkin.animation_finished
+
+
 
 func move(direction: Vector2):
 	# Get current tile Vector2i

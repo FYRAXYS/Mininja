@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxlb5lmq3si1w"
-path="res://.godot/imported/paths.png-def494e4897f0f265ee659ecda211c6f.ctex"
+uid="uid://dlc81d76yptf7"
+path="res://.godot/imported/enemy_concept_refreshed.png-dcbb96cd3149c502943ad32f2f697abf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tiles/paths.png"
-dest_files=["res://.godot/imported/paths.png-def494e4897f0f265ee659ecda211c6f.ctex"]
+source_file="res://images/character/enemies/enemy1/enemy_concept_refreshed.png"
+dest_files=["res://.godot/imported/enemy_concept_refreshed.png-dcbb96cd3149c502943ad32f2f697abf.ctex"]
 
 [params]
 

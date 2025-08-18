@@ -5,32 +5,35 @@ var level_path
 func _ready() -> void:
 	get_tree().paused = false
 	
-	if(FileAccess.file_exists("res://saves/currrent_level.save")) :
+	if(FileAccess.file_exists("res://ressources/saves/currrent_level.save")) :
 		load_data()
 	else :
 		level_path = "res://scenes/levels/lvl_1.tscn"
+	
+	DiscordManager.change_state("In the menu")
+	DiscordManager.change_level(0)
 
 func load_data() :
-	var file = FileAccess.open("res://saves/currrent_level.save", FileAccess.READ)
+	var file = FileAccess.open("res://ressources/saves/currrent_level.save", FileAccess.READ)
 	level_path = file.get_var()
 	file.close()
 
 
 func _on_play_pressed():
-	SceneManager.change_scene(level_path)
+	get_tree().change_scene_to_file(level_path)
 
 
 func _on_level_selection_pressed() -> void:
-	SceneManager.change_scene("res://scenes/menus/menu_lvls.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/menu_lvls.tscn")
 
 
 func _on_options_pressed() -> void:
-	SceneManager.change_scene("res://scenes/menus/menu_options.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/menu_options.tscn")
 
 
 func _on_exit_pressed() -> void:
 	if OS.get_name() == "Web":
-		JavaScriptBridge.eval("window.location.href='https://github.com/FYRAXYS/Mininja'")
+		get_tree().change_scene_to_file("res://scenes/menus/web_exit.tscn")
 	else:
 		get_tree().quit()
 

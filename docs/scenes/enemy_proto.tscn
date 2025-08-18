@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://rbp7e5pfbiip"]
 
-[ext_resource type="Texture2D" uid="uid://d1h4xr1xca548" path="res://images/character/enemies/enemy1/enemy_1_passive.png" id="1_ei0aw"]
+[ext_resource type="Texture2D" uid="uid://dlc81d76yptf7" path="res://images/character/enemies/enemy1/enemy_concept_refreshed.png" id="1_cfwlq"]
 [ext_resource type="Texture2D" uid="uid://c3b6mttp11a32" path="res://images/icons/light.png" id="2_kg6mh"]
 [ext_resource type="Script" uid="uid://1tx0ctvbwi3g" path="res://scripts/player_detection.gd" id="3_exaoq"]
 
@@ -14,8 +14,8 @@ collision_layer = 0
 [node name="EnemySprite" type="Sprite2D" parent="."]
 light_mask = 0
 z_index = 1
-scale = Vector2(0.0452863, 0.048047)
-texture = ExtResource("1_ei0aw")
+scale = Vector2(0.0251608, 0.0266946)
+texture = ExtResource("1_cfwlq")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_index = -1

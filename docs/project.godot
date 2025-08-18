@@ -15,14 +15,14 @@ run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.225542, 0.0891925, 0.128808, 1)
 boot_splash/fullsize=false
-boot_splash/image="res://images/icons/icon.png"
-config/icon="res://images/icons/icon.png"
+boot_splash/image="uid://cbmn7e5nyccx0"
+config/icon="uid://bdbfdveksus1g"
 boot_splash/minimum_display_time=715
 
 [autoload]
 
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
-SceneManager="*res://scripts/SceneManager.gd"
+DiscordManager="*res://scripts/discord_manager.gd"
 
 [display]
 

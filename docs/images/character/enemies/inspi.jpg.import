@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxlb5lmq3si1w"
-path="res://.godot/imported/paths.png-def494e4897f0f265ee659ecda211c6f.ctex"
+uid="uid://bsm6imsh4ydhp"
+path="res://.godot/imported/inspi.jpg-cb195b985036b4b1874c01079f6230e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tiles/paths.png"
-dest_files=["res://.godot/imported/paths.png-def494e4897f0f265ee659ecda211c6f.ctex"]
+source_file="res://images/character/enemies/inspi.jpg"
+dest_files=["res://.godot/imported/inspi.jpg-cb195b985036b4b1874c01079f6230e9.ctex"]
 
 [params]
 

@@ -216,7 +216,7 @@ animations = [{
 }]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q0fk2"]
-polygon = PackedVector2Array(0, -54.113, 35.5646, -44.2743, 45.7259, 78.7098, 25.4033, 73.7904, 20.3226, 59.0323, -30.4839, 59.0323, -35.5646, 73.7904, -55.8872, 78.7098, -45.7259, -44.2743)
+polygon = PackedVector2Array(0, -66.0147, 42.6119, -66.0147, 68.179, -49.511, 76.7014, 123.777, 51.1343, 123.777, 34.0895, 99.022, -34.0895, 99.022, -42.6119, 123.777, -68.179, 123.777, -59.6567, -49.511, -42.6119, -66.0147)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hacn0"]
 radius = 11.0
@@ -238,11 +238,9 @@ scale = Vector2(0.99359, 0.99359)
 zoom = Vector2(1.8, 1.8)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerSkin"]
-visible = false
 scale = Vector2(3.7851, 3.9092)
 occluder = SubResource("OccluderPolygon2D_q0fk2")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_hacn0")
