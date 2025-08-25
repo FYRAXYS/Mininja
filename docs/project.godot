@@ -23,6 +23,7 @@ boot_splash/minimum_display_time=715
 
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 DiscordManager="*res://scripts/discord_manager.gd"
+SaveManager="*res://scripts/global/SaveManager.gd"
 
 [display]
 

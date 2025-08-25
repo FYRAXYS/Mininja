@@ -1,26 +1,20 @@
 extends Control
 
-var level_path
+var last_level:String
 
 func _ready() -> void:
 	get_tree().paused = false
 	
-	if(FileAccess.file_exists("res://ressources/saves/currrent_level.save")) :
-		load_data()
-	else :
-		level_path = "res://scenes/levels/lvl_1.tscn"
+
+	last_level = SaveManager.data["current_level"]
 	
 	DiscordManager.change_state("In the menu")
 	DiscordManager.change_level(0)
 
-func load_data() :
-	var file = FileAccess.open("res://ressources/saves/currrent_level.save", FileAccess.READ)
-	level_path = file.get_var()
-	file.close()
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file(level_path)
+	get_tree().change_scene_to_file(last_level)
 
 
 func _on_level_selection_pressed() -> void:
