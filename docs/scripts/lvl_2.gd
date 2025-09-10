@@ -11,8 +11,7 @@ var paused = false
 
 
 func _process(_delta: float) -> void:
-	DiscordManager.change_state("Playing level 2")
-	DiscordManager.change_level(2)
+
 	
 	SaveManager.update_level(level_path)
 	

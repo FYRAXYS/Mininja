@@ -22,6 +22,8 @@ func write_file(new_data:Dictionary) -> void:
 	
 	var json_text = JSON.stringify(new_data, "\t")
 	file.store_string(json_text)
+	
+	file.close()
 
 
 func load_file() -> void:
@@ -35,6 +37,8 @@ func load_file() -> void:
 	
 	json_object.parse(json)
 	data = json_object.data
+	
+	file.close()
 
 
 func reset_data() -> void:

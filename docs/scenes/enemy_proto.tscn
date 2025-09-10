@@ -18,7 +18,6 @@ scale = Vector2(0.0251608, 0.0266946)
 texture = ExtResource("1_cfwlq")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-z_index = -1
 scale = Vector2(0.49, 0.49)
 color = Color(0.956863, 0.768627, 0.294118, 0.47451)
 energy = 4.5

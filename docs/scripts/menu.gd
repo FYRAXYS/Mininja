@@ -8,8 +8,8 @@ func _ready() -> void:
 
 	last_level = SaveManager.data["current_level"]
 	
-	DiscordManager.change_state("In the menu")
-	DiscordManager.change_level(0)
+	#DiscordManager.change_state("In the menu")
+	#DiscordManager.change_level(0)
 
 
 

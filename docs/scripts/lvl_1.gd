@@ -8,9 +8,13 @@ var level_path = "res://scenes/levels/lvl_1.tscn"
 var paused = false
 @onready var menu_pause = $Player/menu_pause
 
+func _ready() -> void:
+	for child in $"borders".get_children() :
+		if child is AnimatedSprite2D :
+			child.play()
+
 func _process(_delta: float) -> void:
-	DiscordManager.change_state("Playing level 1")
-	DiscordManager.change_level(1)
+
 	
 	SaveManager.update_level(level_path)
 	
@@ -24,8 +28,10 @@ func _process(_delta: float) -> void:
 
 
 
+
 func _on_door_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/lvl_2.tscn")
+	#pass
 
 func pauseMenu():
 	if paused :

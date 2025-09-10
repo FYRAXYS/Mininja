@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce5kpbn1y1l8l"]
+
+[ext_resource type="Texture2D" uid="uid://cjje6nygm8bys" path="res://images/tiles/flag.png" id="1_wkw5i"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wkw5i"]
+light_mode = 1
+
+[node name="flag_1" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_wkw5i")
+scale = Vector2(0.358333, 0.358333)
+texture = ExtResource("1_wkw5i")
