@@ -21,7 +21,6 @@ boot_splash/minimum_display_time=715
 
 [autoload]
 
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 DiscordManager="*res://scripts/discord_manager.gd"
 SaveManager="*res://scripts/global/SaveManager.gd"
 
@@ -31,7 +30,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/discord_social_sdk/plugin.cfg")
 
 [input]
 
