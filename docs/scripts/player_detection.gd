@@ -8,8 +8,8 @@ func _on_player_detect() -> void:
 			
 			var collider = child.get_collider()
 			if collider && collider.get_class() == "CharacterBody2D" :
-				print("/// Player detected ///") 
+				#print("/// Player detected ///") 
 				await get_tree().create_timer(0.4).timeout 
 				get_tree().change_scene_to_file("res://scenes/menus/gameover.tscn")
-			else :
-				print("/////////////////////////")
+			#else :
+				#print("/////////////////////////")

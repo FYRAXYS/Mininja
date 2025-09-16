@@ -14,7 +14,10 @@ func _ready() -> void:
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file(last_level)
+	if OS.get_name() == "Web":
+		get_tree().change_scene_to_file("res://scenes/levels/lvl_1.tscn")
+	else:
+		get_tree().change_scene_to_file(last_level)
 
 
 func _on_level_selection_pressed() -> void:
