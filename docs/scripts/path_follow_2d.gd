@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 @onready var timer = %EnemyTimer
-#@onready var enemy = $"././EnemySprite"
+@onready var enemy = $"././EnemySprite"
 var is_moving: bool = false
 var pressed_direction_key: bool = false
 

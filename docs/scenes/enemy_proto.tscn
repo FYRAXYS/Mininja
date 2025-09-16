@@ -10,6 +10,7 @@ size = Vector2(30, 28)
 [node name="EnemyProto" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 0
+script = ExtResource("3_exaoq")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
 light_mask = 0
@@ -32,97 +33,81 @@ shape = SubResource("RectangleShape2D_ure8a")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 rotation = -3.14159
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
 rotation = 1.5708
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D4" type="RayCast2D" parent="."]
 rotation = -1.5708
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D5" type="RayCast2D" parent="."]
 rotation = -0.785398
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D6" type="RayCast2D" parent="."]
 rotation = 0.785398
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D7" type="RayCast2D" parent="."]
 rotation = 2.35619
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D8" type="RayCast2D" parent="."]
 rotation = -2.35619
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D9" type="RayCast2D" parent="."]
 rotation = 0.394083
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D10" type="RayCast2D" parent="."]
 rotation = -2.74751
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D11" type="RayCast2D" parent="."]
 rotation = 1.96488
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D12" type="RayCast2D" parent="."]
 rotation = -1.17672
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D13" type="RayCast2D" parent="."]
 rotation = -0.391315
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D14" type="RayCast2D" parent="."]
 rotation = 1.17948
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D15" type="RayCast2D" parent="."]
 rotation = 2.75027
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="RayCast2D16" type="RayCast2D" parent="."]
 rotation = -1.96211
 target_position = Vector2(0, 140)
 hit_from_inside = true
-script = ExtResource("3_exaoq")
 
 [node name="Dead" type="TextEdit" parent="."]
 unique_name_in_owner = true

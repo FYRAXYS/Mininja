@@ -1,19 +1,24 @@
 extends CharacterBody2D
 
-@onready var tile_map = $"../Tiles/TileMap"
+# Sprites :
 @onready var sprite_2d = $PlayerSkin
+
+# Tiles :
+@onready var tile_map = $"../Tiles/TileMap"
+
+# Movement :
 @onready var timer = $"../%PlayerTimer"
 var is_moving: bool = false
 var can_move: bool = true
-#var pressed_direction_key: bool = false
+signal detect 
 
 
 func _physics_process(_delta: float) -> void:
 	
+	## Character movement to the "next" tile
 	if global_position == sprite_2d.global_position :
 		is_moving = false
 		return 
-		
 	else :
 		sprite_2d.global_position = sprite_2d.global_position.move_toward(global_position, 4)
 
@@ -23,38 +28,36 @@ func _process(_delta: float) -> void:
 	if is_moving :
 		return 
 	
-	# MOUVEMENT
+	## MOVEMENT :
 	if can_move :
 		if Input.is_action_just_pressed("move_up") :
 			move(Vector2.UP)
 			can_move = false
 			timer.start()
-
+			detect.emit()
+		
 		elif Input.is_action_just_pressed("move_down") :
 			move(Vector2.DOWN)
 			can_move = false
 			timer.start()
-
-			
+			detect.emit()
+		
 		elif Input.is_action_just_pressed("move_left") :
 			move(Vector2.LEFT)
 			$PlayerSkin.flip_h = true
 			can_move = false
 			timer.start()
-
-			
+			detect.emit()
+		
 		elif Input.is_action_just_pressed("move_right") :
 			move(Vector2.RIGHT)
 			$PlayerSkin.flip_h = false
 			can_move = false
 			timer.start()
+			detect.emit()
 
-	
-	#if pressed_direction_key and is_moving :
-		#timer.start()
-		#pressed_direction_key = false
 
-	# SPRITE
+	## SPRITE :
 	if !is_moving :
 		$PlayerSkin.animation = "idle_refreshed"
 	elif is_moving :
@@ -67,16 +70,16 @@ func _process(_delta: float) -> void:
 
 
 func move(direction: Vector2):
-	# Get current tile Vector2i
+	# Get current tile Vector
 	var current_tile: Vector2 = tile_map.local_to_map(global_position)
 	
-	# Get the targeted tile Vector2i
+	# Get the targeted tile Vector
 	var target_tile: Vector2i = Vector2i (
 		current_tile.x + direction.x,
 		current_tile.y + direction.y
 	)
 
-	# Get the custom data layer from the targeted tile
+	# Get the data layer and get it's "walkable" data
 	var tile_data: TileData = tile_map.get_cell_tile_data(target_tile)
 
 	# Move the player
@@ -86,7 +89,6 @@ func move(direction: Vector2):
 		is_moving = true
 		global_position = tile_map.map_to_local(target_tile)
 		sprite_2d.global_position = tile_map.map_to_local(current_tile)
-		
 
 
 func _on_player_timer_timeout() -> void:
