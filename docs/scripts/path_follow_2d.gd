@@ -1,22 +1,20 @@
 extends PathFollow2D
 
 @onready var timer = %EnemyTimer
-@onready var enemy = $"././EnemySprite"
 var is_moving: bool = false
 var pressed_direction_key: bool = false
+var player_moved: bool = false
 
 func _process(_delta: float) -> void:
 	
-	if Input.is_action_just_pressed("move_down") :
+	if Input.is_action_just_pressed("move_down") && player_moved :
 		pressed_direction_key = true
-	elif Input.is_action_just_pressed("move_up") :
+	elif Input.is_action_just_pressed("move_up") && player_moved :
 		pressed_direction_key = true
-	elif Input.is_action_just_pressed("move_left") :
+	elif Input.is_action_just_pressed("move_left") && player_moved :
 		pressed_direction_key = true
-		#enemy.flip_h = true
-	elif Input.is_action_just_pressed("move_right") :
+	elif Input.is_action_just_pressed("move_right") && player_moved :
 		pressed_direction_key = true
-		#enemy.flip_h = false
 	
 	if Input.is_action_just_pressed("Pass") :
 		pressed_direction_key = true
@@ -24,6 +22,8 @@ func _process(_delta: float) -> void:
 	if pressed_direction_key :
 		timer.start()
 		pressed_direction_key = false
+		player_moved = false
+	
 
 
 func _on_enemy_timer_timeout() -> void:
@@ -33,3 +33,8 @@ func _on_enemy_timer_timeout() -> void:
 		await get_tree().create_timer(0.01).timeout
 		progress += 4
 	is_moving = false
+
+
+func _on_player_moved() -> void:
+	player_moved = true
+	print(player_moved , " | " , pressed_direction_key)

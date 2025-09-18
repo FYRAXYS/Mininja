@@ -11,6 +11,7 @@ extends CharacterBody2D
 var is_moving: bool = false
 var can_move: bool = true
 signal detect 
+signal moved
 
 
 func _physics_process(_delta: float) -> void:
@@ -89,6 +90,8 @@ func move(direction: Vector2):
 		is_moving = true
 		global_position = tile_map.map_to_local(target_tile)
 		sprite_2d.global_position = tile_map.map_to_local(current_tile)
+		
+		moved.emit()
 
 
 func _on_player_timer_timeout() -> void:
