@@ -13,6 +13,20 @@ var sample_data:Dictionary = {
 func _ready() -> void:
 	load_file()
 
+func create_file() -> void :
+	# Ouverture du répertoire user
+	var dir = DirAccess.open("user://")
+	
+	# Déplacement et potentielle création du répertoire "saves" s'il n'existe pas
+	if dir.dir_exists("user://saves/") :
+		dir.change_dir("user://saves/")
+	else :
+		dir.make_dir("./saves")
+		dir.change_dir("user://saves/")
+	
+	# écriture du fichier de sauvegarde basique (sample_data)
+	write_file(sample_data)
+
 
 func write_file(new_data:Dictionary) -> void:
 	var file = FileAccess.open(json_path, FileAccess.ModeFlags.WRITE)
@@ -27,10 +41,12 @@ func write_file(new_data:Dictionary) -> void:
 
 
 func load_file() -> void:
-	var file = FileAccess.open(json_path, FileAccess.READ)
 	
-	# vérifie l'existence du fichier :
-	assert(file, "The file used for saving does not exist.")
+	# vérification de l'existence du fichier et potentielle création
+	if !FileAccess.file_exists(json_path) :
+		create_file()
+	
+	var file = FileAccess.open(json_path, FileAccess.READ)
 	
 	var json = file.get_as_text()
 	var json_object = JSON.new()
