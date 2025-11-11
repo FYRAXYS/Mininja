@@ -21,7 +21,7 @@ safe tile are in order to success.
 
 
 # 🌐 | How to play the game in your browser
-You can play Mininja online by clicking [right here](https://fyraxys.github.io/Mininja/). This will give you the last uploaded version of the game.<br/>
+You can play Mininja online by clicking [right here](https://fyraxys.github.io/Mininja/) *(please note that the game will take more time to load if you have a bad internet connection)*. This will give you the last uploaded version of the game.<br/>
 
 However, it's important to know that the web version is **not compatible with the save system** (maybe this problem will be solved in the future). Also, exiting the game using the buttons will crash the page, so I suggest you just close the tab if you are over with it.
 
