@@ -18,7 +18,7 @@ L’idée de départ était de développer mes compétences avec `Godot` et `GDs
 Pour le moment, le jeu est assez simple : vous contrôlez un petit personnage à travers différents niveaux, en essayant d’éviter de vous faire repérer. Tous les ennemis utilisent de la lumière pour patrouiller différentes zones de chaque niveau. Mais la particularité, c’est que les déplacements sont "*en grille*". Le jeu fonctionne aussi avec un système de tours, où le joueur et les ennemis bougent chacun leur tour. Il faut donc anticiper où sont les cases sûres pour réussir.
 
 # 🌐 | Comment jouer au jeu dans votre navigateur  
-Vous pouvez jouer à Mininja en ligne en cliquant [juste ici](https://fyraxys.github.io/Mininja/). Cela vous donnera la dernière version mise en ligne du jeu.<br/>
+Vous pouvez jouer à Mininja en ligne en cliquant [juste ici](https://fyraxys.github.io/Mininja/) *(notez que le jeu prendra plus de temps à charger si votre connexion à Internet est mauvaise)*. Cela vous donnera la dernière version mise en ligne du jeu.<br/>
 
 Cependant, il est important de savoir que la version Web est **incompatible avec le système de sauvegarde** (ce problème sera peut-être corrigé à l’avenir). De plus, quitter le jeu avec les boutons intégrés peut faire planter la page. Il est donc préférable de simplement fermer l’onglet quand vous avez terminé.
 
