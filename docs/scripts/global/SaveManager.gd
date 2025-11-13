@@ -5,7 +5,7 @@ var data:Dictionary = {}
 
 var sample_data:Dictionary = {
 	"current_level" : "res://scenes/levels/lvl_1.tscn",
-	"arrow" : false,
+	"arrow" : true,
 	"color" : "R"
 }
 

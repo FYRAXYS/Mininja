@@ -50,6 +50,7 @@ text = "Pointing Arrow : "
 [node name="Arrow" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxArrow"]
 texture_filter = 2
 layout_mode = 2
+button_pressed = true
 
 [node name="HBoxReset" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

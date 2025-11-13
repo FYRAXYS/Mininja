@@ -104,15 +104,16 @@ layout_mode = 2
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_cfcag")
-theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 text = "PLAY"
 
 [node name="LevelSelection2" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_cfcag")
-theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 text = "LEVEL SELECTION"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -123,8 +124,8 @@ text = "OPTIONS"
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_cfcag")
-theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 theme_override_colors/font_hover_color = Color(0.898039, 0.552941, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.683553, 0.568251, 0, 1)
 text = "EXIT"
 
 [node name="DiscordButton" type="Button" parent="."]
@@ -137,9 +138,9 @@ offset_left = 2.0
 offset_top = -54.0
 offset_right = 189.0
 grow_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0.646868, 0.647635, 1)
-theme_override_colors/font_hover_color = Color(0.25098, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.25098, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.646868, 0.647635, 1)
 text = "Join the discord server !!!"
 flat = true
 autowrap_mode = 3

@@ -1,33 +1,36 @@
 extends Node2D
 
 
-var save_path = "res://saves/currrent_level.save"
 var level_path = "res://scenes/levels/lvl_3.tscn"
 
-func save(level_path):
-	var file = FileAccess.open("res://saves/currrent_level.save", FileAccess.WRITE)
-	file.store_var(level_path)
-	file.close()
-
+@onready var arrow = %Arrow
 
 var paused = false
 @onready var menu_pause = $Player/menu_pause
-@onready var door = $Door
 
-func _on_button_button_pressed() -> void:
-	door.set_monitoring(true)
-	print("bouton activé")
+func _ready() -> void:
+	for child in $"borders".get_children() :
+		if child is AnimatedSprite2D :
+			child.play()
 
-func _on_door_body_entered(body: Node2D) -> void:
-	print(door.is_monitoring())
-	get_tree().change_scene_to_file("res://scenes/levels/lvl_4.tscn")
-
-func _process(delta: float) -> void:
-	save(level_path)
+func _process(_delta: float) -> void:
+	SaveManager.update_level(level_path)
 	
 	if Input.is_action_just_pressed("pause_menu"):
 		pauseMenu()
 	
+	if SaveManager.data["arrow"] :
+		arrow.look_at($Door.global_position)
+	else :
+		arrow.hide()
+
+
+
+
+func _on_door_body_entered(_body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")
+
+
 func pauseMenu():
 	if paused :
 		menu_pause.hide()

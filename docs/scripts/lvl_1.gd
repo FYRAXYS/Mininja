@@ -14,8 +14,6 @@ func _ready() -> void:
 			child.play()
 
 func _process(_delta: float) -> void:
-
-	
 	SaveManager.update_level(level_path)
 	
 	if Input.is_action_just_pressed("pause_menu"):
@@ -31,7 +29,7 @@ func _process(_delta: float) -> void:
 
 func _on_door_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/lvl_2.tscn")
-	#pass
+
 
 func pauseMenu():
 	if paused :
